@@ -13,6 +13,7 @@ class Create extends Component
     public function simpan()
     {
         $this->form->simpan();
+        flash('Data postingan berhasil di buat.', 'alert-success');
     }
 
     public function render()
