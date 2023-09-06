@@ -4,17 +4,17 @@
         <form wire:submit="simpan">
             <div class="form-group mb-3">
                 <label for="title" class="mb-2">Judul</label>
-                <input type="text" class="form-control" wire:model="title" id="title" placeholder="Isi dengan judul..." />
-                @error('title')
+                <input type="text" class="form-control" wire:model="form.title" id="title" placeholder="Isi dengan judul..." />
+                @error('form.title')
                 <div class="text-danger mt-1">
                     {{ $message }}
                 </div>
                 @enderror
             </div>
             <div class="form-group mb-3">
-                <label for="body" class="mb-2">Body</label>
-                <textarea class="form-control" wire:model="body" id="body" rows="4" placeholder="Anda ingin memposting apa hari ini..."></textarea>
-                @error('body')
+                <label for="form.body" class="mb-2">Body</label>
+                <textarea class="form-control" wire:model="form.body" id="body" rows="4" placeholder="Anda ingin memposting apa hari ini..."></textarea>
+                @error('form.body')
                 <div class="text-danger mt-1">
                     {{ $message }}
                 </div>

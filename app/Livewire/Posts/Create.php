@@ -4,25 +4,15 @@ namespace App\Livewire\Posts;
 
 use App\Models\User;
 use Livewire\Component;
-use Livewire\Attributes\Rule;
+use App\Livewire\Forms\PostForm;
 
 class Create extends Component
 {
-    #[Rule(['required', 'string', 'max:191'])]
-    public string $title = '';
+    public PostForm $form;
 
-    #[Rule(['required', 'string'])]
-    public string $body = '';
-
-    public function simpan(User $user)
+    public function simpan()
     {
-        $user = $user->first();
-
-        $data = $this->validate();
-
-        $user->posts()->create($data);
-
-        $this->reset();
+        $this->form->simpan();
     }
 
     public function render()
