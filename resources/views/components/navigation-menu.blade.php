@@ -9,6 +9,16 @@
                 <x-nav-link :active="request()->routeIs('home')" :href="route('home')">Home</x-nav-link>
                 <x-nav-link :active="request()->routeIs('posts.index')" :href="route('posts.index')">Posts</x-nav-link>
             </ul>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                @auth
+                <form action="{{ route('logout') }}" method="post">
+                    @csrf
+                    <button class="btn btn-primary">Logout</button>
+                </form>
+                @else
+                <x-nav-link :href="route('login')">Login</x-nav-link>
+                @endauth
+            </ul>
         </div>
     </div>
 </nav>
